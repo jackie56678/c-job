@@ -20,8 +20,9 @@ char name[20];
 int credit;};
 struct student member[maxmember];
 struct course curriculum[maxcourse];
-main()
+void main()
 {
+	SetConsoleOutputCP(65001);//é˜²æ­¢ä¸­æ–‡ä¹±ç 
 	void title(char *s); 
 	void inputmember(struct student *p,int*a,int*c);
 	void inputcourse(struct student *p1,struct course *p,int*b,int*c); 
@@ -35,33 +36,33 @@ main()
 	void lookup(struct student *p,struct course *p1,int *a,int *b,int*c);
 	void printall(struct student *p,struct course *p1,int *a,int *b,int*c);
 	char choose;int flag1=0,flag2=0,flag3=0; int *a=&flag1,*b=&flag2,*c=&flag3;
-	title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\t\t\t\t\t\t\tProgrammed by WangYulong\n\n\t\t\t\t\t\t\tthe member of the Cooprative Team of C Programming Language \n");
- 	printf("\n\n\t\t\t\t\t\t\tÎª·½±ãÊ¹ÓÃÕß¿ìËÙÁË½âÏµÍ³£¬ÕâÀï¸ø³ö¼¸µã¹ØÓÚÏµÍ³µÄËµÃ÷£º\n\n"); 
-	printf("\t\t\t\t\t\t\t*±¾ÏµÍ³Ä¬ÈÏÑ§ºÅ1-4Î»ÊÇÄê¼¶¡¢5-6Î»ÊÇÑ§Ôº¡¢7-8Î»ÊÇ×¨Òµ\n\n"); 
- 	printf("\t\t\t\t\t\t\t*Ç°Èı¸öÊäÈë¹¦ÄÜÊÇÊ¹ÓÃÆäËû¹¦ÄÜµÄ»ù´¡£¬Ó¦µ±ÓÅÏÈÑ¡Ôñ\n\n"); 
- 	printf("\t\t\t\t\t\t\t*Ñ¡Ôñ²Ëµ¥ÖĞµÄ×ÖÄ¸Ñ¡ÏîÊ±´óĞ¡Ğ´Ğ§¹ûÏàÍ¬\n\n"); 
- 	printf("\t\t\t\t\t\t\t*ÏµÍ³ÄÚËùÓĞ²Ëµ¥ÓÃbackµÄÊ××ÖÄ¸b»òB×÷Îª·µ»Ø\n\n"); 
- 	printf("\t\t\t\t\t\t\t*´òÓ¡¹¦ÄÜÓÃprintµÄÊ××ÖÄ¸p»òP±íÊ¾\n\n"); 
- 	printf("\t\t\t\t\t\t\t*ÓĞÊ±Ò»¸ö²Ëµ¥Ñ¡ÏîĞèÒªÊäÈëÁ½±é·½²ÅÖ´ĞĞÃüÁî\n\n"); 
-	printf("\t\t\t\t\t\t\t*µ±³öÏÖÊı×Ö¶ÑµşÊ±²ÉÓÃÈ«ÆÁÏÔÊ¾¼´¿É\n\n");
+	title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\t\t\t\t\t\t\tProgrammed by WangYulong\n\n\t\t\t\t\t\t\tthe member of the Cooprative Team of C Programming Language \n");
+ 	printf("\n\n\t\t\t\t\t\t\tä¸ºæ–¹ä¾¿ä½¿ç”¨è€…å¿«é€Ÿäº†è§£ç³»ç»Ÿï¼Œè¿™é‡Œç»™å‡ºå‡ ç‚¹å…³äºç³»ç»Ÿçš„è¯´æ˜ï¼š\n\n"); 
+	printf("\t\t\t\t\t\t\t*æœ¬ç³»ç»Ÿé»˜è®¤å­¦å·1-4ä½æ˜¯å¹´çº§ã€5-6ä½æ˜¯å­¦é™¢ã€7-8ä½æ˜¯ä¸“ä¸š\n\n"); 
+ 	printf("\t\t\t\t\t\t\t*å‰ä¸‰ä¸ªè¾“å…¥åŠŸèƒ½æ˜¯ä½¿ç”¨å…¶ä»–åŠŸèƒ½çš„åŸºç¡€ï¼Œåº”å½“ä¼˜å…ˆé€‰æ‹©\n\n"); 
+ 	printf("\t\t\t\t\t\t\t*é€‰æ‹©èœå•ä¸­çš„å­—æ¯é€‰é¡¹æ—¶å¤§å°å†™æ•ˆæœç›¸åŒ\n\n"); 
+ 	printf("\t\t\t\t\t\t\t*ç³»ç»Ÿå†…æ‰€æœ‰èœå•ç”¨backçš„é¦–å­—æ¯bæˆ–Bä½œä¸ºè¿”å›\n\n"); 
+ 	printf("\t\t\t\t\t\t\t*æ‰“å°åŠŸèƒ½ç”¨printçš„é¦–å­—æ¯pæˆ–Pè¡¨ç¤º\n\n"); 
+ 	printf("\t\t\t\t\t\t\t*æœ‰æ—¶ä¸€ä¸ªèœå•é€‰é¡¹éœ€è¦è¾“å…¥ä¸¤éæ–¹æ‰æ‰§è¡Œå‘½ä»¤\n\n"); 
+	printf("\t\t\t\t\t\t\t*å½“å‡ºç°æ•°å­—å †å æ—¶é‡‡ç”¨å…¨å±æ˜¾ç¤ºå³å¯\n\n");
  	printf("\n\n\n"); 
- 	printf("°´»Ø³µ¼ü½øÈëÏµÍ³...\n");
+ 	printf("æŒ‰å›è½¦é”®è¿›å…¥ç³»ç»Ÿ...\n");
  	getchar();
 	do{
- 		title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");
- 		printf("\t\t\t\t\t\t\t¹¦ÄÜ´óÈ«£º\n\n");
-		printf("\t\t\t\t\t\t\t1.Â¼ÈëÑ§ÉúĞÅÏ¢\n\n");
-		printf("\t\t\t\t\t\t\t2.Â¼Èë¿Î³ÌĞÅÏ¢\n\n");
-		printf("\t\t\t\t\t\t\t3.Â¼Èë·ÖÊı\n\n"); 
-		printf("\t\t\t\t\t\t\t4.ĞŞ¸ÄÑ§Éú¼ÇÂ¼\n\n");
-		printf("\t\t\t\t\t\t\t5.É¾³ıÑ§Éú¼ÇÂ¼\n\n"); 
-	 	printf("\t\t\t\t\t\t\t6.Ìí¼ÓÑ§ÉúĞÅÏ¢\n\n"); 
- 		printf("\t\t\t\t\t\t\t7.¿Î³Ì¿â\n\n");
-  		printf("\t\t\t\t\t\t\t8.ÅÅĞò\n\n");
-   		printf("\t\t\t\t\t\t\t9.Í³¼Æ\n\n");
-	    printf("\t\t\t\t\t\t\ta.²éÑ¯\n\n"); 
-		printf("\t\t\t\t\t\t\tp.´òÓ¡ËùÓĞĞÅÏ¢\n\n");
-		printf("\t\t\t\t\t\t\tb.ÍË³ö\n\n");
+ 		title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");
+ 		printf("\t\t\t\t\t\t\tåŠŸèƒ½å¤§å…¨ï¼š\n\n");
+		printf("\t\t\t\t\t\t\t1.å½•å…¥å­¦ç”Ÿä¿¡æ¯\n\n");
+		printf("\t\t\t\t\t\t\t2.å½•å…¥è¯¾ç¨‹ä¿¡æ¯\n\n");
+		printf("\t\t\t\t\t\t\t3.å½•å…¥åˆ†æ•°\n\n"); 
+		printf("\t\t\t\t\t\t\t4.ä¿®æ”¹å­¦ç”Ÿè®°å½•\n\n");
+		printf("\t\t\t\t\t\t\t5.åˆ é™¤å­¦ç”Ÿè®°å½•\n\n"); 
+	 	printf("\t\t\t\t\t\t\t6.æ·»åŠ å­¦ç”Ÿä¿¡æ¯\n\n"); 
+ 		printf("\t\t\t\t\t\t\t7.è¯¾ç¨‹åº“\n\n");
+  		printf("\t\t\t\t\t\t\t8.æ’åº\n\n");
+   		printf("\t\t\t\t\t\t\t9.ç»Ÿè®¡\n\n");
+	    printf("\t\t\t\t\t\t\ta.æŸ¥è¯¢\n\n"); 
+		printf("\t\t\t\t\t\t\tp.æ‰“å°æ‰€æœ‰ä¿¡æ¯\n\n");
+		printf("\t\t\t\t\t\t\tb.é€€å‡º\n\n");
 		printf("\n\n\n");
 		scanf("%c",&choose);
 		getchar();
@@ -82,7 +83,7 @@ main()
 		case 'p':printall(member,curriculum,a,b,c);getchar();break;
 		case 'B':
 		case 'b':exit(0);
-		default:printf("Ñ¡Ïî²»´æÔÚ£¬°´»Ø³µ¼ü¼ÌĞø...\n");getchar();break;
+		default:printf("é€‰é¡¹ä¸å­˜åœ¨ï¼ŒæŒ‰å›è½¦é”®ç»§ç»­...\n");getchar();break;
 		}
 	}while(choose!='b'&&choose!='B');
 }
@@ -94,7 +95,7 @@ void title(char *s)
 void titleforsequence(char *s,char *s2)
 {
 	system("cls");
-	printf("\t\t\t\t\t\tµÚÒ»×Ö¶ÎÎª%s£¬µÚ¶ş×Ö¶ÎÎª%s¿Î³ÌÅÅĞò\n\n\n",s,s2);
+	printf("\t\t\t\t\t\tç¬¬ä¸€å­—æ®µä¸º%sï¼Œç¬¬äºŒå­—æ®µä¸º%sè¯¾ç¨‹æ’åº\n\n\n",s,s2);
 }
 void extract( struct student *p)
 {
@@ -118,12 +119,12 @@ void average(struct student *p)
 }
 void delete1(struct student *p) 
 {
-	title("°´Ñ§ºÅÉ¾³ı¼ÇÂ¼");
+	title("æŒ‰å­¦å·åˆ é™¤è®°å½•");
 	char deletenum[13]; 
 	int i,j;
-	printf("ÇëÊäÈëĞèÒªÉ¾³ı¼ÇÂ¼µÄÑ§ÉúÑ§ºÅ:\n");
+	printf("è¯·è¾“å…¥éœ€è¦åˆ é™¤è®°å½•çš„å­¦ç”Ÿå­¦å·:\n");
 	scanf("%s",deletenum);
-	title("°´Ñ§ºÅÉ¾³ı¼ÇÂ¼");
+	title("æŒ‰å­¦å·åˆ é™¤è®°å½•");
 	for(i=0;i<=realnumber-1;i++)
 	{
 		if(strcmp(deletenum,p[i].num)==0)
@@ -134,23 +135,23 @@ void delete1(struct student *p)
 				p[j]=p[j+1];
 			} 
 			realnumber--;
-			printf("É¾³ı³É¹¦,°´»Ø³µ¼ü·µ»Ø\n");
+			printf("åˆ é™¤æˆåŠŸ,æŒ‰å›è½¦é”®è¿”å›\n");
 			getchar(); 
 			return; 
 		}	
 	}
-	printf("Ã»ÓĞ¸ÃÑ§ÉúĞÅÏ¢\n");
+	printf("æ²¡æœ‰è¯¥å­¦ç”Ÿä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void delete5(struct student *p) 
 {
-	title("°´ĞÕÃûÉ¾³ı¼ÇÂ¼");
+	title("æŒ‰å§“ååˆ é™¤è®°å½•");
 	char deletename[13]; 
 	int i,j;
-	printf("ÇëÊäÈëĞèÒªÉ¾³ı¼ÇÂ¼µÄÑ§ÉúÑ§ºÅ:\n");
+	printf("è¯·è¾“å…¥éœ€è¦åˆ é™¤è®°å½•çš„å­¦ç”Ÿå­¦å·:\n");
 	scanf("%s",deletename);
-	title("°´ĞÕÃûÉ¾³ı¼ÇÂ¼");
+	title("æŒ‰å§“ååˆ é™¤è®°å½•");
 	for(i=0;i<=realnumber-1;i++)
 	{
 		if(strcmp(deletename,p[i].name)==0)
@@ -161,21 +162,21 @@ void delete5(struct student *p)
 				p[j]=p[j+1];
 			} 
 			realnumber--;
-			printf("É¾³ı³É¹¦,°´»Ø³µ¼ü·µ»Ø\n");
+			printf("åˆ é™¤æˆåŠŸ,æŒ‰å›è½¦é”®è¿”å›\n");
 			getchar(); 
 			return; 
 		}	
 	}
-	printf("Ã»ÓĞ¸ÃÑ§ÉúĞÅÏ¢\n");
+	printf("æ²¡æœ‰è¯¥å­¦ç”Ÿä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void delete2(struct student *p) 
 {
-	title("°´Äê¼¶É¾³ı¼ÇÂ¼");
+	title("æŒ‰å¹´çº§åˆ é™¤è®°å½•");
 	char deletegrade[5];
 	int i,j,successdeletenum=0;
-	printf("ÇëÊäÈëĞèÒªÉ¾³ıµÄÄê¼¶ºÅ£º\n"); 
+	printf("è¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å¹´çº§å·ï¼š\n"); 
 	scanf("%s",deletegrade);
 	for(i=0;i<=realnumber-1;i++)
 	{
@@ -191,17 +192,17 @@ void delete2(struct student *p)
 		}	
 	}
 	if(successdeletenum==0){
-	printf("Ã»ÓĞ¸ÃÄê¼¶ĞÅÏ¢\n");
+	printf("æ²¡æœ‰è¯¥å¹´çº§ä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");}
-	else {getchar();printf("³É¹¦É¾³ı%dÌõ¼ÇÂ¼£¬°´»Ø³µ¼ü·µ»Ø...\n",successdeletenum); }
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");}
+	else {getchar();printf("æˆåŠŸåˆ é™¤%dæ¡è®°å½•ï¼ŒæŒ‰å›è½¦é”®è¿”å›...\n",successdeletenum); }
 }
 void delete3(struct student *p) 
 {
-	title("°´×¨ÒµÉ¾³ı¼ÇÂ¼");
+	title("æŒ‰ä¸“ä¸šåˆ é™¤è®°å½•");
 	char deletemajor[3]; 
 	int i,j,successdeletenum=0;
-	printf("ÇëÊäÈëĞèÒªÉ¾³ıµÄ×¨ÒµºÅ:\n");
+	printf("è¯·è¾“å…¥éœ€è¦åˆ é™¤çš„ä¸“ä¸šå·:\n");
 	scanf("%s",deletemajor);
 	for(i=0;i<=realnumber-1;i++)
 	{
@@ -219,17 +220,17 @@ void delete3(struct student *p)
 		}	
 	}
 	if(successdeletenum==0){
-	printf("Ã»ÓĞ¸Ã×¨ÒµĞÅÏ¢\n");
+	printf("æ²¡æœ‰è¯¥ä¸“ä¸šä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");}
-	else {getchar();printf("³É¹¦É¾³ı%dÌõ¼ÇÂ¼£¬°´»Ø³µ¼ü·µ»Ø...\n",successdeletenum); }
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");}
+	else {getchar();printf("æˆåŠŸåˆ é™¤%dæ¡è®°å½•ï¼ŒæŒ‰å›è½¦é”®è¿”å›...\n",successdeletenum); }
 }
 void delete4(struct student *p)
 {
-	title("°´Ñ§ÔºÉ¾³ı¼ÇÂ¼");
+	title("æŒ‰å­¦é™¢åˆ é™¤è®°å½•");
 	char deletecollege[3];
 	int i,j,successdeletenum=0;
-	printf("ÇëÊäÈëĞèÒªÉ¾³ıµÄÑ§ÔººÅ£º\n"); 
+	printf("è¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å­¦é™¢å·ï¼š\n"); 
 	scanf("%s",deletecollege);
 	for(i=0;i<=realnumber-1;i++)
 	{
@@ -245,52 +246,52 @@ void delete4(struct student *p)
 		}	
 	}
 	if(successdeletenum==0){
-	printf("Ã»ÓĞ¸ÃÑ§ÔºĞÅÏ¢\n");
+	printf("æ²¡æœ‰è¯¥å­¦é™¢ä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");}
-	else {getchar();printf("³É¹¦É¾³ı%dÌõ¼ÇÂ¼£¬°´»Ø³µ¼ü·µ»Ø...\n",successdeletenum); }
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");}
+	else {getchar();printf("æˆåŠŸåˆ é™¤%dæ¡è®°å½•ï¼ŒæŒ‰å›è½¦é”®è¿”å›...\n",successdeletenum); }
 }
 void add1(struct student *p,struct course *p1)
 {
 	void inputcorepart(struct student *p,struct course *p1,int n);
-	title("Ìí¼ÓÒ»¸öÑ§ÉúĞÅÏ¢");
-	printf("ÇëÒÀ´ÎÊäÈëÑ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ\n");
+	title("æ·»åŠ ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯");
+	printf("è¯·ä¾æ¬¡è¾“å…¥å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«\n");
  	scanf("%s %s %s",p[realnumber].num,p[realnumber].name,p[realnumber].sex);
  	extract(p+realnumber);
  	inputcorepart(p+realnumber,p1,1); 
 	realnumber++;
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void add2(struct student *p,struct course *p1)
 {
 	void inputcorepart(struct student *p,struct course *p1,int n);
-	title("Ìí¼Ó¶à¸öÑ§ÉúĞÅÏ¢");
+	title("æ·»åŠ å¤šä¸ªå­¦ç”Ÿä¿¡æ¯");
 	int number,i;
-	printf("ĞèÒªÌí¼ÓµÄÑ§ÉúÈËÊıÎª£º\n");
+	printf("éœ€è¦æ·»åŠ çš„å­¦ç”Ÿäººæ•°ä¸ºï¼š\n");
 	scanf("%d",&number);
-	title("Ìí¼Ó¶à¸öÑ§ÉúĞÅÏ¢");
+	title("æ·»åŠ å¤šä¸ªå­¦ç”Ÿä¿¡æ¯");
 	for(i=1;i<=number;i++)
 	{
-		printf("ÇëÊäÈëµÚ%d¸öÌí¼ÓÑ§ÉúµÄÑ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ\n",i);
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªæ·»åŠ å­¦ç”Ÿçš„å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«\n",i);
  		scanf("%s %s %s",(p+realnumber+i-1)->num,(p+realnumber+i-1)->name,(p+realnumber+i-1)->sex);
  		extract(p+realnumber+i-1);
 	}
 	inputcorepart(p+realnumber,p1,number);
 	realnumber+=number;
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void add3(struct student *p,struct course *p1)
 {
 	void inputcorepart(struct student *p,struct course *p1,int n);
-	title("Ìí¼Ó²»¶¨ÈËÊıÑ§ÉúĞÅÏ¢");
+	title("æ·»åŠ ä¸å®šäººæ•°å­¦ç”Ÿä¿¡æ¯");
 	int i;char s[20]; 
-	title("Ìí¼Ó²»¶¨ÈËÊıÑ§ÉúĞÅÏ¢");
-	printf("ÊäÈëµ¥´Êstop²¢»Ø³µÔòÍ£Ö¹Ìí¼ÓĞÂÈË\n");
+	title("æ·»åŠ ä¸å®šäººæ•°å­¦ç”Ÿä¿¡æ¯");
+	printf("è¾“å…¥å•è¯stopå¹¶å›è½¦åˆ™åœæ­¢æ·»åŠ æ–°äºº\n");
 	for(i=1;i>=1;i++)
 	{
-		printf("ÇëÊäÈëµÚ%d¸öÌí¼ÓÑ§ÉúµÄÑ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ\n",i);
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªæ·»åŠ å­¦ç”Ÿçš„å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«\n",i);
 		scanf("%s",(p+realnumber+i-1)->num);
 		if(strcmp((p+realnumber+i-1)->num,"stop")!=0){ 
 		scanf("%s",(p+realnumber+i-1)->name);if(strcmp((p+realnumber+i-1)->name,"stop")!=0){scanf("%s",(p+realnumber+i-1)->sex);if(strcmp((p+realnumber+i-1)->sex,"stop")==0)break;}else break;} 
@@ -299,29 +300,29 @@ void add3(struct student *p,struct course *p1)
 	inputcorepart(p+realnumber,p1,i-1);
 	realnumber+=(i-1);
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void addcourse(struct student *p1,struct course *p)
 {
-	title("Ìí¼Ó¿Î³Ì");
+	title("æ·»åŠ è¯¾ç¨‹");
 	int i;
 	realcourse++;
-	printf("ÇëÒÀ´ÎÊäÈë¿Î³ÌºÅ¡¢¿Î³ÌÃû¡¢Ñ§·Ö\n");
+	printf("è¯·ä¾æ¬¡è¾“å…¥è¯¾ç¨‹å·ã€è¯¾ç¨‹åã€å­¦åˆ†\n");
 	scanf("%d %s %d",&p[realcourse-1].num,p[realcourse-1].name,&p[realcourse-1].credit); 
 	for(i=0;i<=realnumber-1;i++)
 	{
-		printf("ÇëÊäÈë%sµÄ%sµÄ¿Î³Ì·ÖÊı£º\n",p1[i].name,p[realcourse].name);
+		printf("è¯·è¾“å…¥%sçš„%sçš„è¯¾ç¨‹åˆ†æ•°ï¼š\n",p1[i].name,p[realcourse].name);
 		scanf("%f",&p1[i].score[realcourse-1]);
 		average(p1+i);
 	}
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void deletecourse(struct student *p1,struct course *p)
 {
-	title("É¾³ı¿Î³Ì");
+	title("åˆ é™¤è¯¾ç¨‹");
 	int i,j,recording;
 	char name[20];
-	printf("ÇëÊäÈëÒªÉ¾³ı¿Î³ÌµÄ¿Î³ÌÃû\n");
+	printf("è¯·è¾“å…¥è¦åˆ é™¤è¯¾ç¨‹çš„è¯¾ç¨‹å\n");
 	scanf("%s",name);
 	for(j=0;j<=realcourse-1;j++)
 	{
@@ -341,14 +342,14 @@ void deletecourse(struct student *p1,struct course *p)
 	}
 	realcourse--;
 	getchar();
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void revisecourse(struct course *p)
 {
-	title("ĞŞ¸Ä¿Î³ÌĞÅÏ¢");
+	title("ä¿®æ”¹è¯¾ç¨‹ä¿¡æ¯");
 	char name[20];
 	int j,credit,flag=0,storage;
-	printf("ÊäÈëĞèÒªĞŞ¸ÄµÄ¿Î³ÌµÄ¿Î³ÌÃû£º\n");
+	printf("è¾“å…¥éœ€è¦ä¿®æ”¹çš„è¯¾ç¨‹çš„è¯¾ç¨‹åï¼š\n");
 	scanf("%s",name);
 	for(j=0;j<=realcourse-1;j++)
 	{
@@ -357,19 +358,19 @@ void revisecourse(struct course *p)
 		else flag++;
 	}
 	if(flag==realcourse)
-	{printf("Î´ÕÒµ½´Ë¿Î³Ì\n");return;}
-	else printf("ÇëÒÀ´ÎÊäÈëĞŞ¸ÄºóµÄ¿Î³ÌºÅ¡¢¿Î³ÌĞÂÃû¡¢¿Î³ÌÑ§·Ö£º\n");
+	{printf("æœªæ‰¾åˆ°æ­¤è¯¾ç¨‹\n");return;}
+	else printf("è¯·ä¾æ¬¡è¾“å…¥ä¿®æ”¹åçš„è¯¾ç¨‹å·ã€è¯¾ç¨‹æ–°åã€è¯¾ç¨‹å­¦åˆ†ï¼š\n");
 	scanf("%d %s %d",&p[j].num,p[j].name,&p[j].credit);
 	getchar();
-	printf("\n\n\nĞŞ¸Ä³É¹¦£¬°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\nä¿®æ”¹æˆåŠŸï¼ŒæŒ‰å›è½¦é”®è¿”å›");
 }
 void viewcourse(struct student *p1,struct course *p,int *a,int *b,int*c)
 {
 	void statcourse(struct student *p,struct course *p1,int*a,int*b,int*c); 
-	title("²é¿´ËùÓĞ¿Î³ÌĞÅÏ¢");
+	title("æŸ¥çœ‹æ‰€æœ‰è¯¾ç¨‹ä¿¡æ¯");
 	int i;
 	statcourse(p1,p,a,b,c);
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void printjgt(struct student *p,struct course*p1)
 {
@@ -391,17 +392,17 @@ p=*p1;
 void printfiguretitle(struct course *p)
 {
 	int i;
-	printf("Ñ§ºÅ\t\tĞÕÃû\tĞÔ±ğ\t");
+	printf("å­¦å·\t\tå§“å\tæ€§åˆ«\t");
 	for(i=0;i<=realcourse-1;i++)
 	{
 		printf("%-8s",p[i].name);
 	}	
-	printf("×Ü·Ö\tÆ½¾ù·Ö\tÑ§·Ö\tÄê¼¶\tÑ§Ôº\t×¨Òµ\t"); 
+	printf("æ€»åˆ†\tå¹³å‡åˆ†\tå­¦åˆ†\tå¹´çº§\tå­¦é™¢\tä¸“ä¸š\t"); 
 	printf("\n");
 }
 void numsequence(struct student *p,struct course *p1)
 {
-	title("°´Ñ§ºÅÅÅĞò");
+	title("æŒ‰å­¦å·æ’åº");
 	int i,j,k;
 	struct student *storage;
 	storage=p;
@@ -410,7 +411,7 @@ void numsequence(struct student *p,struct course *p1)
 	{
 		for(j=i+1;j<=realnumber-1;j++)
 		{
-			if(strcmp(p->num,(storage+j)->num)>0)//´óÓÚ¸ÄĞ¡ÓÚÔò·´ĞòÅÅÁĞ 
+			if(strcmp(p->num,(storage+j)->num)>0)//å¤§äºæ”¹å°äºåˆ™ååºæ’åˆ— 
 			{
 				changejgt(p,storage+j);
 			}
@@ -421,11 +422,11 @@ void numsequence(struct student *p,struct course *p1)
 }
 void totalsequence(struct student *p,struct course *p1)
 {
-	title("°´×Ü·ÖÅÅÃû");
+	title("æŒ‰æ€»åˆ†æ’å");
 	int i,j,k;
 	struct student *storage;
 	storage=p;
-	printf("ĞòºÅ\t"); 
+	printf("åºå·\t"); 
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-2;i++,p++)
 	{
@@ -447,7 +448,7 @@ void totalsequence(struct student *p,struct course *p1)
 	for(i=2,k=1;i<=realnumber;i++)
 	{
 		k++;
-		if((storage+i-1)->aver==(storage+i-2)->aver)//´óÓÚ¸ÄĞ¡ÓÚÔò·´ĞòÅÅÁĞ 
+		if((storage+i-1)->aver==(storage+i-2)->aver)//å¤§äºæ”¹å°äºåˆ™ååºæ’åˆ— 
 		k--;
 		printf("%-8d",k);
 		printjgt(storage+i-1,p1);
@@ -455,11 +456,11 @@ void totalsequence(struct student *p,struct course *p1)
 }
 void grasubsequence(struct student *p,struct course *p1)
 {
-	title("µÚÒ»×Ö¶ÎÎªÄê¼¶£¬µÚ¶ş×Ö¶ÎÎª¿Î³ÌÅÅĞò");
+	title("ç¬¬ä¸€å­—æ®µä¸ºå¹´çº§ï¼Œç¬¬äºŒå­—æ®µä¸ºè¯¾ç¨‹æ’åº");
 	int i,j,k,l,flag=0;char sub[20];
 	struct student *storage;
 	storage=p;
-	printf("ÇëÊäÈëµÚ¶ş×Ö¶Î¿Î³ÌÃû³Æ£º\n"); 
+	printf("è¯·è¾“å…¥ç¬¬äºŒå­—æ®µè¯¾ç¨‹åç§°ï¼š\n"); 
 	scanf("%s",sub);
 	getchar();
 	for(l=0;l<=realcourse-1;l++)
@@ -471,10 +472,10 @@ void grasubsequence(struct student *p,struct course *p1)
 	}
 	if(flag==0){
 		getchar();
-		printf("Ã»ÓĞ¸ÃÑ§¿Æ£¬°´»Ø³µ¼ü·µ»Ø...\n");
+		printf("æ²¡æœ‰è¯¥å­¦ç§‘ï¼ŒæŒ‰å›è½¦é”®è¿”å›...\n");
 		return;
 	}
-	titleforsequence("Äê¼¶",sub); 
+	titleforsequence("å¹´çº§",sub); 
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-2;i++,p++)
 	{
@@ -497,11 +498,11 @@ void grasubsequence(struct student *p,struct course *p1)
 
 void majsubsequence(struct student *p,struct course *p1)
 {
-	title("µÚÒ»×Ö¶ÎÎª×¨Òµ£¬µÚ¶ş×Ö¶ÎÎª¿Î³ÌÅÅĞò");
+	title("ç¬¬ä¸€å­—æ®µä¸ºä¸“ä¸šï¼Œç¬¬äºŒå­—æ®µä¸ºè¯¾ç¨‹æ’åº");
 	int i,j,k,l,flag=0;char sub[20];
 	struct student *storage;
 	storage=p;
-	printf("ÇëÊäÈëµÚ¶ş×Ö¶Î¿Î³ÌÃû³Æ£º\n"); 
+	printf("è¯·è¾“å…¥ç¬¬äºŒå­—æ®µè¯¾ç¨‹åç§°ï¼š\n"); 
 	scanf("%s",sub);
 	getchar();
 	for(l=0;l<=realcourse-1;l++)
@@ -513,10 +514,10 @@ void majsubsequence(struct student *p,struct course *p1)
 	}
 	if(flag==0){
 		getchar();
-		printf("Ã»ÓĞ¸ÃÑ§¿Æ£¬°´»Ø³µ¼ü·µ»Ø...\n");
+		printf("æ²¡æœ‰è¯¥å­¦ç§‘ï¼ŒæŒ‰å›è½¦é”®è¿”å›...\n");
 		return;
 	}
-	titleforsequence("×¨Òµ",sub); 
+	titleforsequence("ä¸“ä¸š",sub); 
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-2;i++,p++)
 	{
@@ -538,11 +539,11 @@ void majsubsequence(struct student *p,struct course *p1)
 }
 void colsubsequence(struct student *p,struct course *p1)
 {
-	title("µÚÒ»×Ö¶ÎÎªÑ§Ôº£¬µÚ¶ş×Ö¶ÎÎª¿Î³ÌÅÅĞò");
+	title("ç¬¬ä¸€å­—æ®µä¸ºå­¦é™¢ï¼Œç¬¬äºŒå­—æ®µä¸ºè¯¾ç¨‹æ’åº");
 	int i,j,k,l,flag=0;char sub[20];
 	struct student *storage;
 	storage=p;
-	printf("ÇëÊäÈëµÚ¶ş×Ö¶Î¿Î³ÌÃû³Æ£º\n"); 
+	printf("è¯·è¾“å…¥ç¬¬äºŒå­—æ®µè¯¾ç¨‹åç§°ï¼š\n"); 
 	scanf("%s",sub);
 	getchar();
 	for(l=0;l<=realcourse-1;l++)
@@ -554,10 +555,10 @@ void colsubsequence(struct student *p,struct course *p1)
 	}
 	if(flag==0){
 		getchar();
-		printf("Ã»ÓĞ¸ÃÑ§¿Æ£¬°´»Ø³µ¼ü·µ»Ø...\n");
+		printf("æ²¡æœ‰è¯¥å­¦ç§‘ï¼ŒæŒ‰å›è½¦é”®è¿”å›...\n");
 		return;
 	}
-	titleforsequence("Ñ§Ôº",sub); 
+	titleforsequence("å­¦é™¢",sub); 
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-2;i++,p++)
 	{
@@ -581,8 +582,8 @@ void subjectsequence(struct student *p,struct course *p1)
 {
 	char subject[20];
 	int i,j,k;
-	title("°´Ñ§¿ÆÅÅĞò");
-	printf("ÇëÊäÈëÑ§¿ÆÃû³Æ:");
+	title("æŒ‰å­¦ç§‘æ’åº");
+	printf("è¯·è¾“å…¥å­¦ç§‘åç§°:");
 	scanf("%s",subject);
 	for(j=0;j<=realcourse-1;j++)
 	{
@@ -601,17 +602,17 @@ void subjectsequence(struct student *p,struct course *p1)
 					}
 				}
 			}
-			system("cls");printf("\t\t\t\t\t\t\t\t°´%sÑ§¿ÆÅÅĞò\n\n\n",subject);
+			system("cls");printf("\t\t\t\t\t\t\t\tæŒ‰%så­¦ç§‘æ’åº\n\n\n",subject);
 			printfiguretitle(p1);
 			for(k=0;k<=realnumber-1;k++)
 			printjgt(p+k,p1);
 			getchar();
-			printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+			printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 			return;	
 		}
 	}
 	getchar();
-	printf("Ã»ÓĞ¸ÃÑ§¿Æ£¬°´»Ø³µ¼ü·µ»Ø...\n");
+	printf("æ²¡æœ‰è¯¥å­¦ç§‘ï¼ŒæŒ‰å›è½¦é”®è¿”å›...\n");
 }
 int creditcal(struct student p,struct course*p1)
 {
@@ -625,12 +626,12 @@ int creditcal(struct student p,struct course*p1)
 }
 void numberlookup(struct student *p,struct course*p1)
 {
-	title("°´Ñ§ºÅ²éÑ¯");
+	title("æŒ‰å­¦å·æŸ¥è¯¢");
 	char lookupnum[13]; 
 	int i,j;
-	printf("ÇëÊäÈëĞèÒª²éÕÒµÄÑ§ÉúµÄ12Î»Ñ§ºÅ:\n");
+	printf("è¯·è¾“å…¥éœ€è¦æŸ¥æ‰¾çš„å­¦ç”Ÿçš„12ä½å­¦å·:\n");
 	scanf("%s",lookupnum);
-	title("°´Ñ§ºÅ²éÑ¯");
+	title("æŒ‰å­¦å·æŸ¥è¯¢");
 	for(i=0;i<=realnumber-1;i++,p++)
 	{
 		if(strcmp(lookupnum,p->num)==0)
@@ -638,21 +639,21 @@ void numberlookup(struct student *p,struct course*p1)
 			printfiguretitle(p1);
 			printjgt(p,p1);
 			getchar();
-			printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+			printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 			return;
 		}
 	}
 	getchar();
-	printf("\n\n\nÃ»ÓĞ¸ÃÉúĞÅÏ¢£¬Çë°´»Ø³µ¼ü·µ»Ø...");
+	printf("\n\n\næ²¡æœ‰è¯¥ç”Ÿä¿¡æ¯ï¼Œè¯·æŒ‰å›è½¦é”®è¿”å›...");
 }
 void namelookup(struct student *p,struct course *p1)
 {
-	title("°´ĞÕÃû²éÑ¯");
+	title("æŒ‰å§“åæŸ¥è¯¢");
 	char lookupname[20]; 
 	int i,j,successlookupnum=0;
-	printf("ÇëÊäÈëĞèÒª²éÕÒµÄÑ§ÉúĞÕÃû:\n");
+	printf("è¯·è¾“å…¥éœ€è¦æŸ¥æ‰¾çš„å­¦ç”Ÿå§“å:\n");
 	scanf("%s",lookupname);
-	title("°´ĞÕÃû²éÑ¯");
+	title("æŒ‰å§“åæŸ¥è¯¢");
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-1;i++,p++)
 	{
@@ -663,19 +664,19 @@ void namelookup(struct student *p,struct course *p1)
 		}
 	}
 	if(successlookupnum==0){
-	printf("Ã»ÓĞ¸ÃĞÕÃûĞÅÏ¢\n");
+	printf("æ²¡æœ‰è¯¥å§“åä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\nÇë°´»Ø³µ¼ü·µ»Ø");}
-	else {getchar();printf("Çë°´»Ø³µ¼ü·µ»Ø...\n"); }
+	printf("\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›");}
+	else {getchar();printf("è¯·æŒ‰å›è½¦é”®è¿”å›...\n"); }
 }
 void gradelookup(struct student *p,struct course *p1)
 {
-	title("°´Äê¼¶²éÑ¯");
+	title("æŒ‰å¹´çº§æŸ¥è¯¢");
 	char lookupgrade[5]; 
 	int i,j,successlookupnum=0;
-	printf("ÇëÊäÈëĞèÒª²éÕÒµÄÄê¼¶:\n");
+	printf("è¯·è¾“å…¥éœ€è¦æŸ¥æ‰¾çš„å¹´çº§:\n");
 	scanf("%s",lookupgrade);
-	title("°´Äê¼¶²éÑ¯");
+	title("æŒ‰å¹´çº§æŸ¥è¯¢");
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-1;i++,p++)
 	{
@@ -686,19 +687,19 @@ void gradelookup(struct student *p,struct course *p1)
 		}
 	}
 	if(successlookupnum==0){
-	printf("\n\n\nÃ»ÓĞ¸ÃÄê¼¶ĞÅÏ¢\n");
+	printf("\n\n\næ²¡æœ‰è¯¥å¹´çº§ä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\nÇë°´»Ø³µ¼ü·µ»Ø");}
-	else {getchar();printf("\n\n\nÇë°´»Ø³µ¼ü·µ»Ø...\n"); }
+	printf("\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›");}
+	else {getchar();printf("\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›...\n"); }
 }
 void majorlookup(struct student *p,struct course *p1)
 {
-	title("°´×¨Òµ²éÑ¯");
+	title("æŒ‰ä¸“ä¸šæŸ¥è¯¢");
 	char lookupmajor[3]; 
 	int i,j,successlookupnum=0;
-	printf("ÇëÊäÈëĞèÒª²éÕÒµÄ×¨Òµ:\n");
+	printf("è¯·è¾“å…¥éœ€è¦æŸ¥æ‰¾çš„ä¸“ä¸š:\n");
 	scanf("%s",lookupmajor);
-	title("°´×¨Òµ²éÑ¯");
+	title("æŒ‰ä¸“ä¸šæŸ¥è¯¢");
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-1;i++,p++)
 	{
@@ -709,19 +710,19 @@ void majorlookup(struct student *p,struct course *p1)
 		}
 	}
 	if(successlookupnum==0){
-	printf("\n\n\nÃ»ÓĞ¸Ã×¨ÒµĞÅÏ¢\n");
+	printf("\n\n\næ²¡æœ‰è¯¥ä¸“ä¸šä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\nÇë°´»Ø³µ¼ü·µ»Ø");}
-	else {getchar();printf("\n\n\nÇë°´»Ø³µ¼ü·µ»Ø...\n"); }
+	printf("\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›");}
+	else {getchar();printf("\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›...\n"); }
 }
 void collegelookup(struct student *p,struct course *p1)
 {
-	title("°´Ñ§Ôº²éÑ¯");
+	title("æŒ‰å­¦é™¢æŸ¥è¯¢");
 	char lookupcollege[3]; 
 	int i,j,successlookupnum=0;
-	printf("ÇëÊäÈëĞèÒª²éÕÒµÄÑ§Ôº:\n");
+	printf("è¯·è¾“å…¥éœ€è¦æŸ¥æ‰¾çš„å­¦é™¢:\n");
 	scanf("%s",lookupcollege);
-	title("°´Ñ§Ôº²éÑ¯");
+	title("æŒ‰å­¦é™¢æŸ¥è¯¢");
 	printfiguretitle(p1);
 	for(i=0;i<=realnumber-1;i++,p++)
 	{
@@ -732,10 +733,10 @@ void collegelookup(struct student *p,struct course *p1)
 		}
 	}
 	if(successlookupnum==0){
-	printf("\n\n\nÃ»ÓĞ¸ÃÑ§ÔºĞÅÏ¢\n");
+	printf("\n\n\næ²¡æœ‰è¯¥å­¦é™¢ä¿¡æ¯\n");
 	getchar();
-	printf("\n\n\nÇë°´»Ø³µ¼ü·µ»Ø");}
-	else {getchar();printf("\n\n\nÇë°´»Ø³µ¼ü·µ»Ø...\n"); }
+	printf("\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›");}
+	else {getchar();printf("\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›...\n"); }
 }
 void clearstuinf(struct student *p)
 {
@@ -748,42 +749,42 @@ void inputmember(struct student *p,int *a,int*c)
 {
 	char choice[20];char choose;int i,j;
 	if(*a>0)
-	{title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");printf("ÒÑÊäÈëÑ§ÉúĞÅÏ¢£¬ÊÇ·ñ¾ö¶¨ÖØĞÂÊäÈë£¿\nÈç¹ûÊÇÇëÊäÈëyes½øĞĞÈ·ÈÏ£¬²»ÊÇÔòÊäÈëÆäËû×Ö·û\n");
+	{title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");printf("å·²è¾“å…¥å­¦ç”Ÿä¿¡æ¯ï¼Œæ˜¯å¦å†³å®šé‡æ–°è¾“å…¥ï¼Ÿ\nå¦‚æœæ˜¯è¯·è¾“å…¥yesè¿›è¡Œç¡®è®¤ï¼Œä¸æ˜¯åˆ™è¾“å…¥å…¶ä»–å­—ç¬¦\n");
 	scanf("%s",choice);
 	if(strcmp(choice,"Yes")!=0&&strcmp(choice,"yes")!=0)
 	return;
 	}
 	do{
-	title("ÊäÈëÑ§ÉúĞÅÏ¢");
-	printf("\t\t\t\t\t\t\t1.ÈËÊıÈ·¶¨\n\n\t\t\t\t\t\t\t2.ÈËÊı²»È·¶¨\n\n");
+	title("è¾“å…¥å­¦ç”Ÿä¿¡æ¯");
+	printf("\t\t\t\t\t\t\t1.äººæ•°ç¡®å®š\n\n\t\t\t\t\t\t\t2.äººæ•°ä¸ç¡®å®š\n\n");
 	scanf("%c",&choose);
 	getchar();
 	switch (choose){
-	case '1': *c=0;title("ÊäÈëÑ§ÉúĞÅÏ¢");printf("ÇëÊäÈëÑ§ÉúÈËÊı£º"); 
+	case '1': *c=0;title("è¾“å…¥å­¦ç”Ÿä¿¡æ¯");printf("è¯·è¾“å…¥å­¦ç”Ÿäººæ•°ï¼š"); 
 	scanf("%d",&realnumber);
 	for(i=1;i<=realnumber;i++)
 	{
-		title("ÊäÈëÑ§ÉúĞÅÏ¢");
-		printf("\n\nÇëÒÀ´ÎÊäÈëµÚ%dÎ»Ñ§ÉúµÄ12Î»Ñ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ¡££¨Î´ÊäÈëÈËÊı£º%d£©\n",i,realnumber-i+1);
+		title("è¾“å…¥å­¦ç”Ÿä¿¡æ¯");
+		printf("\n\nè¯·ä¾æ¬¡è¾“å…¥ç¬¬%dä½å­¦ç”Ÿçš„12ä½å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«ã€‚ï¼ˆæœªè¾“å…¥äººæ•°ï¼š%dï¼‰\n",i,realnumber-i+1);
 		scanf("%s %s %s",p[i-1].num,p[i-1].name,p[i-1].sex);
 		clearstuinf(p+i-1);
 		extract(p+i-1);
 	}
 	getchar();
-	printf("\n\n\nÊäÈëÍê³É£¬Çë°´ÈÎÒâ¼ü·µ»Ø");getchar();break;
-	case '2':*c=0;title("ÊäÈëÑ§ÉúĞÅÏ¢");printf("ÊäÈëµ¥´Êstop²¢»Ø³µÔòÍ£Ö¹\n");realnumber=0;
+	printf("\n\n\nè¾“å…¥å®Œæˆï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›");getchar();break;
+	case '2':*c=0;title("è¾“å…¥å­¦ç”Ÿä¿¡æ¯");printf("è¾“å…¥å•è¯stopå¹¶å›è½¦åˆ™åœæ­¢\n");realnumber=0;
 	for(i=1;i>=1;i++)
 	{
-		printf("ÇëÊäÈëµÚ%d¸öÌí¼ÓÑ§ÉúµÄÑ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ\n",i);
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªæ·»åŠ å­¦ç”Ÿçš„å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«\n",i);
 		scanf("%s",(p+i-1)->num);
 		if(strcmp((p+i-1)->num,"stop")!=0){ 
-		scanf("%s",(p+i-1)->name);if(strcmp((p+i-1)->name,"stop")!=0){scanf("%s",(p+i-1)->sex);if(strcmp((p+i-1)->sex,"stop")==0){printf("ÊäÈëÍê³É£¬Çë°´»Ø³µ¼ü¼ÌĞø...");getchar();return;}}else {printf("ÊäÈëÍê³É£¬Çë°´»Ø³µ¼ü¼ÌĞø...");getchar();return;}} 
-		else {printf("ÊäÈëÍê³É£¬Çë°´»Ø³µ¼ü¼ÌĞø...");getchar();getchar();return;}
+		scanf("%s",(p+i-1)->name);if(strcmp((p+i-1)->name,"stop")!=0){scanf("%s",(p+i-1)->sex);if(strcmp((p+i-1)->sex,"stop")==0){printf("è¾“å…¥å®Œæˆï¼Œè¯·æŒ‰å›è½¦é”®ç»§ç»­...");getchar();return;}}else {printf("è¾“å…¥å®Œæˆï¼Œè¯·æŒ‰å›è½¦é”®ç»§ç»­...");getchar();return;}} 
+		else {printf("è¾“å…¥å®Œæˆï¼Œè¯·æŒ‰å›è½¦é”®ç»§ç»­...");getchar();getchar();return;}
 		clearstuinf(p+i-1);
 		extract(p+i-1);
 		realnumber++;
 	}
-	default:printf("Ã»ÓĞ¸ÃÑ¡Ïî£¬Çë°´»Ø³µ¼ÌĞø...");getchar();break;} 
+	default:printf("æ²¡æœ‰è¯¥é€‰é¡¹ï¼Œè¯·æŒ‰å›è½¦ç»§ç»­...");getchar();break;} 
 	}while(choose!='1'&&choose!='2');
 }
 void clearcouinf(struct student *p,int j)
@@ -796,24 +797,24 @@ void inputcourse(struct student *p1,struct course *p,int *b,int*c)
 {
 	char choice[20];
 	if(*b>0)
-	{title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");printf("ÒÑÊäÈë¿Î³ÌĞÅÏ¢£¬ÊÇ·ñ¾ö¶¨ÖØĞÂÊäÈë£¿\nÈç¹ûÊÇÇëÊäÈëyes½øĞĞÈ·ÈÏ£¬²»ÊÇÔòÊäÈëÆäËû×Ö·û\n");
+	{title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");printf("å·²è¾“å…¥è¯¾ç¨‹ä¿¡æ¯ï¼Œæ˜¯å¦å†³å®šé‡æ–°è¾“å…¥ï¼Ÿ\nå¦‚æœæ˜¯è¯·è¾“å…¥yesè¿›è¡Œç¡®è®¤ï¼Œä¸æ˜¯åˆ™è¾“å…¥å…¶ä»–å­—ç¬¦\n");
 	scanf("%s",choice);
 	if(strcmp(choice,"Yes")!=0&&strcmp(choice,"yes")!=0)
 	return;
 	}
  	*c=0;
-	title("ÊäÈë¿Î³ÌĞÅÏ¢");
-	printf("¿Î³ÌÊıÎª:");
+	title("è¾“å…¥è¯¾ç¨‹ä¿¡æ¯");
+	printf("è¯¾ç¨‹æ•°ä¸º:");
 	scanf("%d",&realcourse);
 	int i;
 	for(i=1;i<=realcourse;i++)
 	{
-		title("ÊäÈë¿Î³ÌĞÅÏ¢");
-		printf("ÇëÒÀ´ÎÊäÈëµÚ%dÃÅ¿Î³ÌµÄ¿Î³ÌºÅ£¬¿Î³ÌÃûºÍÑ§·Ö¡££¨´ıÊäÈë¿Î³ÌÊıÁ¿£º%d£©\n",i,realcourse-i+1); 
+		title("è¾“å…¥è¯¾ç¨‹ä¿¡æ¯");
+		printf("è¯·ä¾æ¬¡è¾“å…¥ç¬¬%dé—¨è¯¾ç¨‹çš„è¯¾ç¨‹å·ï¼Œè¯¾ç¨‹åå’Œå­¦åˆ†ã€‚ï¼ˆå¾…è¾“å…¥è¯¾ç¨‹æ•°é‡ï¼š%dï¼‰\n",i,realcourse-i+1); 
 		scanf("%d %s %d",&p[i-1].num,p[i-1].name,&p[i-1].credit);
 		clearcouinf(p1,i-1);
 	}
-	printf("\n\n\nÊäÈëÍê³É£¬Çë°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\nè¾“å…¥å®Œæˆï¼Œè¯·æŒ‰å›è½¦é”®è¿”å›");
 	getchar(); 
 }
 void inputcorepart(struct student *p,struct course *p1,int n)
@@ -821,11 +822,11 @@ void inputcorepart(struct student *p,struct course *p1,int n)
 	int i,j;
 	for(i=1;i<=n;i++)
 	{
-		title("ÊäÈëÑ§Éú³É¼¨");
-		printf("ÇëÒÀ´ÎÊäÈë%sµÄ",p[i-1].name);
+		title("è¾“å…¥å­¦ç”Ÿæˆç»©");
+		printf("è¯·ä¾æ¬¡è¾“å…¥%sçš„",p[i-1].name);
 		for(j=0;j<=realcourse-2;j++)//
-		printf("%s¡¢",p1[j].name);
-		printf("%s³É¼¨£º£¨»¹ÓĞ%dÌõ´ıÊäÈë£©\n",p1[realcourse-1].name,n-i+1);
+		printf("%sã€",p1[j].name);
+		printf("%sæˆç»©ï¼šï¼ˆè¿˜æœ‰%dæ¡å¾…è¾“å…¥ï¼‰\n",p1[realcourse-1].name,n-i+1);
 		for(j=1;j<=realcourse;j++)
 		{
 			scanf("%f",&p[i-1].score[j-1]);
@@ -837,42 +838,42 @@ void inputscore(struct student *p,struct course *p1,int *a,int *b,int*c)
 {
 	if(*a==0||*b==0)
 	{
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p,a,c);(*a)++;}
 		if(*b==0){inputcourse(p,p1,b,c);(*b)++;}
 	}
 	char choice[20];
 	if(*c>0)
-	{title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");printf("ÒÑÊäÈë·ÖÊı£¬ÊÇ·ñ¾ö¶¨ÖØĞÂÊäÈë£¿\nÈç¹ûÊÇÇëÊäÈëyes½øĞĞÈ·ÈÏ£¬²»ÊÇÔòÊäÈëÆäËû×Ö·û\n");
+	{title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");printf("å·²è¾“å…¥åˆ†æ•°ï¼Œæ˜¯å¦å†³å®šé‡æ–°è¾“å…¥ï¼Ÿ\nå¦‚æœæ˜¯è¯·è¾“å…¥yesè¿›è¡Œç¡®è®¤ï¼Œä¸æ˜¯åˆ™è¾“å…¥å…¶ä»–å­—ç¬¦\n");
 	scanf("%s",choice);
 	if(strcmp(choice,"Yes")!=0&&strcmp(choice,"yes")!=0)
 	return;
 	}
-	title("ÊäÈëÑ§Éú³É¼¨");
+	title("è¾“å…¥å­¦ç”Ÿæˆç»©");
 	inputcorepart(p,p1,realnumber);
 	getchar();
-	printf("\n\n\nÊäÈëÍê³É£¬°´ÈÎÒâ¼ü·µ»Ø...");
+	printf("\n\n\nè¾“å…¥å®Œæˆï¼ŒæŒ‰ä»»æ„é”®è¿”å›...");
 }
 void reviseatnum(struct student *p,struct course *p1)
 {
-	title("°´Ñ§ºÅĞŞ¸ÄĞÅÏ¢");
+	title("æŒ‰å­¦å·ä¿®æ”¹ä¿¡æ¯");
 	int i,j;
 	char errornum[13];
-	printf("ÇëÊäÈëÑ§ºÅ£º\n");
+	printf("è¯·è¾“å…¥å­¦å·ï¼š\n");
 	scanf("%s",errornum);
-	title("ĞŞ¸ÄÑ§ÉúĞÅÏ¢");
+	title("ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯");
 	for(i=1;i<=realnumber;i++)
 	{
 		if(strcmp(errornum,p->num)==0)
 		{
-			printf("ÇëÒÀ´ÎÊäÈëĞŞ¸ÄºóµÄÑ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ\n");
+			printf("è¯·ä¾æ¬¡è¾“å…¥ä¿®æ”¹åçš„å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«\n");
 			scanf("%s %s %s",p->num,p->name,p->sex);
 			extract(p);
-			printf("ÇëÒÀ´ÎÊäÈëĞŞ¸ÄºóµÄ");
+			printf("è¯·ä¾æ¬¡è¾“å…¥ä¿®æ”¹åçš„");
 			for(j=0;j<=realcourse-2;j++)
-			printf("%s¡¢",p1[j].name);
-			printf("%s³É¼¨£º\n",p1[realcourse-1].name);
+			printf("%sã€",p1[j].name);
+			printf("%sæˆç»©ï¼š\n",p1[realcourse-1].name);
 			p->aver=0;
 	 		for(j=1;j<=realcourse;j++)
 		 	{
@@ -880,33 +881,33 @@ void reviseatnum(struct student *p,struct course *p1)
  				p->aver+=p->score[j-1];
  			}
 			average(p);
-			printf("ĞŞ¸ÄÍê³É£¬Çë°´»Ø³µ¼ü¼ÌĞø...");
+			printf("ä¿®æ”¹å®Œæˆï¼Œè¯·æŒ‰å›è½¦é”®ç»§ç»­...");
 			return;
 		}
 		p++; 
 	}
 	getchar();
-	printf("ÏµÍ³ÖĞÃ»ÓĞ¸ÃÑ§ºÅµÄÑ§Éú\n\n\nÇë°´»Ø³µ¼ü·µ»Ø");
+	printf("ç³»ç»Ÿä¸­æ²¡æœ‰è¯¥å­¦å·çš„å­¦ç”Ÿ\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›");
 } 
 void reviseatname(struct student *p,struct course *p1)
 {
-	title("°´ĞÕÃûĞŞ¸ÄĞÅÏ¢");
+	title("æŒ‰å§“åä¿®æ”¹ä¿¡æ¯");
 	int i,j;
 	char errorname[20];
-	printf("ÇëÊäÈëÑ§ÉúĞÕÃû£º\n");
+	printf("è¯·è¾“å…¥å­¦ç”Ÿå§“åï¼š\n");
 	scanf("%s",errorname);
-	title("ĞŞ¸ÄÑ§ÉúĞÅÏ¢");
+	title("ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯");
 	for(i=1;i<=realnumber;i++)
 	{
 		if(strcmp(errorname,p->name)==0)
 		{
-			printf("ÇëÒÀ´ÎÊäÈëĞŞ¸ÄºóµÄÑ§ºÅ£¬ĞÕÃû£¬ĞÔ±ğ\n");
+			printf("è¯·ä¾æ¬¡è¾“å…¥ä¿®æ”¹åçš„å­¦å·ï¼Œå§“åï¼Œæ€§åˆ«\n");
 			scanf("%s %s %s",p->num,p->name,p->sex);
 			extract(p);
-			printf("ÇëÒÀ´ÎÊäÈëĞŞ¸ÄºóµÄ");
+			printf("è¯·ä¾æ¬¡è¾“å…¥ä¿®æ”¹åçš„");
 			for(j=0;j<=realcourse-2;j++)
-			printf("%s¡¢",p1[j].name);
-			printf("%s³É¼¨£º\n",p1[realcourse-1].name);
+			printf("%sã€",p1[j].name);
+			printf("%sæˆç»©ï¼š\n",p1[realcourse-1].name);
 			p->aver=0;
 	 		for(j=1;j<=realcourse;j++)
 		 	{
@@ -914,38 +915,38 @@ void reviseatname(struct student *p,struct course *p1)
  				p->aver+=p->score[j-1];
  			}
 			average(p);
-			printf("ĞŞ¸ÄÍê³É£¬Çë°´»Ø³µ¼ü¼ÌĞø...");
+			printf("ä¿®æ”¹å®Œæˆï¼Œè¯·æŒ‰å›è½¦é”®ç»§ç»­...");
 			return;
 		}
 		p++; 
 	}
 	getchar();
-	printf("ÏµÍ³ÖĞÃ»ÓĞ¸ÃĞÕÃûµÄÑ§Éú\n\n\nÇë°´»Ø³µ¼ü·µ»Ø");
+	printf("ç³»ç»Ÿä¸­æ²¡æœ‰è¯¥å§“åçš„å­¦ç”Ÿ\n\n\nè¯·æŒ‰å›è½¦é”®è¿”å›");
 } 
 void revise(struct student *p,struct course *p1) 
 {
-	title("ĞŞ¸ÄÑ§Éú¼ÇÂ¼");
+	title("ä¿®æ”¹å­¦ç”Ÿè®°å½•");
 	char choose;
 	do{
-	title("ĞŞ¸ÄÑ§Éú¼ÇÂ¼");
-	printf("\t\t\t\t\t\t\t1.°´Ñ§ºÅĞŞ¸Ä¼ÇÂ¼\n\n\t\t\t\t\t\t\t2.°´ĞÕÃûĞŞ¸Ä¼ÇÂ¼\n\n\t\t\t\t\t\t\tb.·µ»ØÉÏ¼¶²Ëµ¥\n");
+	title("ä¿®æ”¹å­¦ç”Ÿè®°å½•");
+	printf("\t\t\t\t\t\t\t1.æŒ‰å­¦å·ä¿®æ”¹è®°å½•\n\n\t\t\t\t\t\t\t2.æŒ‰å§“åä¿®æ”¹è®°å½•\n\n\t\t\t\t\t\t\tb.è¿”å›ä¸Šçº§èœå•\n");
 	scanf("%c",&choose);
 	switch(choose){
 		case '1':reviseatnum(p,p1);getchar();break;
 		case '2':reviseatname(p,p1);getchar();break;
 	 	case 'b':
 	 	case 'B':break;
-		default:printf("Ñ¡Ïî²»´æÔÚ£¬°´»Ø³µ¼ü¼ÌĞø...\n");getchar();break;
+		default:printf("é€‰é¡¹ä¸å­˜åœ¨ï¼ŒæŒ‰å›è½¦é”®ç»§ç»­...\n");getchar();break;
 	}
 	}while(choose!='b'&&choose!='B');
 } 
 void cutout(struct student *p)
 {
-	title("É¾³ıÑ§Éú¼ÇÂ¼");
+	title("åˆ é™¤å­¦ç”Ÿè®°å½•");
 	char choose;
 	do{
-	title("É¾³ıÑ§Éú¼ÇÂ¼");
-	printf("\t\t\t\t\t\t\t1.°´Ñ§ºÅÉ¾³ıÒ»¸öÑ§ÉúµÄ¼ÇÂ¼\n\n\t\t\t\t\t\t\t2.°´ĞÕÃûÉ¾³ıÒ»¸öÑ§ÉúµÄ¼ÇÂ¼\n\n\t\t\t\t\t\t\t3.É¾³ıÄ³Äê¼¶µÄ¼ÇÂ¼\n\n\t\t\t\t\t\t\t4.É¾³ıÄ³×¨ÒµµÄ¼ÇÂ¼\n\n\t\t\t\t\t\t\t5.É¾³ıÄ³Ñ§ÔºµÄ¼ÇÂ¼\n\n\t\t\t\t\t\t\tb.·µ»ØÉÏ¼¶²Ëµ¥\n");
+	title("åˆ é™¤å­¦ç”Ÿè®°å½•");
+	printf("\t\t\t\t\t\t\t1.æŒ‰å­¦å·åˆ é™¤ä¸€ä¸ªå­¦ç”Ÿçš„è®°å½•\n\n\t\t\t\t\t\t\t2.æŒ‰å§“ååˆ é™¤ä¸€ä¸ªå­¦ç”Ÿçš„è®°å½•\n\n\t\t\t\t\t\t\t3.åˆ é™¤æŸå¹´çº§çš„è®°å½•\n\n\t\t\t\t\t\t\t4.åˆ é™¤æŸä¸“ä¸šçš„è®°å½•\n\n\t\t\t\t\t\t\t5.åˆ é™¤æŸå­¦é™¢çš„è®°å½•\n\n\t\t\t\t\t\t\tb.è¿”å›ä¸Šçº§èœå•\n");
 	scanf("%c",&choose);
 	switch(choose){
 		case '1':delete1(p);getchar();break;
@@ -955,7 +956,7 @@ void cutout(struct student *p)
 		case '5':delete4(p);getchar();break;
 	 	case 'b':
 	 	case 'B':break;
-		default:printf("Ñ¡Ïî²»´æÔÚ£¬°´»Ø³µ¼ü¼ÌĞø...\n");getchar();break;
+		default:printf("é€‰é¡¹ä¸å­˜åœ¨ï¼ŒæŒ‰å›è½¦é”®ç»§ç»­...\n");getchar();break;
 	}
 	}while(choose!='b'&&choose!='B');
 }
@@ -963,17 +964,17 @@ void add(struct student *p,struct course *p1,int *a,int *b,int*c)
 {
 	if(*a==0||*b==0)
 	{
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p,a,c);(*a)++;}
 		if(*b==0){inputcourse(p,p1,b,c);(*b)++;}
 	}
-	title("Ìí¼ÓÑ§ÉúĞÅÏ¢");
+	title("æ·»åŠ å­¦ç”Ÿä¿¡æ¯");
 	int i,j;
 	char choose;
 	do{
-	title("Ìí¼ÓÑ§ÉúĞÅÏ¢");
-	printf("\t\t\t\t\t\t\t1.Ôö¼Óµ¥¸öÑ§ÉúĞÅÏ¢\n\n\t\t\t\t\t\t\t2.Ôö¼ÓÒ»¶¨ÈËÊıÑ§ÉúĞÅÏ¢\n\n\t\t\t\t\t\t\t3.Ôö¼Ó²»¶¨ÈËÊıÑ§ÉúĞÅÏ¢\n\n\t\t\t\t\t\t\tb.·µ»ØÉÏÒ»¼¶²Ëµ¥\n");
+	title("æ·»åŠ å­¦ç”Ÿä¿¡æ¯");
+	printf("\t\t\t\t\t\t\t1.å¢åŠ å•ä¸ªå­¦ç”Ÿä¿¡æ¯\n\n\t\t\t\t\t\t\t2.å¢åŠ ä¸€å®šäººæ•°å­¦ç”Ÿä¿¡æ¯\n\n\t\t\t\t\t\t\t3.å¢åŠ ä¸å®šäººæ•°å­¦ç”Ÿä¿¡æ¯\n\n\t\t\t\t\t\t\tb.è¿”å›ä¸Šä¸€çº§èœå•\n");
 	scanf("%c",&choose);
 	getchar();
  	switch(choose){
@@ -982,7 +983,7 @@ void add(struct student *p,struct course *p1,int *a,int *b,int*c)
  		case'3':add3(p,p1);getchar();break;
 	 	case 'b':
 	 	case 'B':break;
- 		default:printf("Ñ¡Ïî²»´æÔÚ£¬°´»Ø³µ¼ü¼ÌĞø\n");getchar();break;
+ 		default:printf("é€‰é¡¹ä¸å­˜åœ¨ï¼ŒæŒ‰å›è½¦é”®ç»§ç»­\n");getchar();break;
  	}
 	}while(choose!='b'&&choose!='B');
 }
@@ -990,53 +991,53 @@ void coursebase(struct student *p1,struct course *p,int *a,int *b,int*c)
 {
 	if(*a==0||*b==0)
 	{
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p1,a,c);(*a)++;}
 		if(*b==0){inputcourse(p1,p,b,c);(*b)++;}
 	}
-	title("¿Î³Ì¿â");
+	title("è¯¾ç¨‹åº“");
 	char choose; 
 	do{
-	title("¿Î³Ì¿â");
-	printf("\t\t\t\t\t\t\t1.Ìí¼Ó¿Î³Ì\n\n\t\t\t\t\t\t\t2.É¾³ı¿Î³Ì\n\n\t\t\t\t\t\t\t3.ĞŞ¸Ä¿Î³ÌĞÅÏ¢\n\n\t\t\t\t\t\t\t4.ä¯ÀÀËùÓĞ¿Î³Ì\n\n\t\t\t\t\t\t\tb.·µ»ØÉÏ¼¶²Ëµ¥\n");
+	title("è¯¾ç¨‹åº“");
+	printf("\t\t\t\t\t\t\t1.æ·»åŠ è¯¾ç¨‹\n\n\t\t\t\t\t\t\t2.åˆ é™¤è¯¾ç¨‹\n\n\t\t\t\t\t\t\t3.ä¿®æ”¹è¯¾ç¨‹ä¿¡æ¯\n\n\t\t\t\t\t\t\t4.æµè§ˆæ‰€æœ‰è¯¾ç¨‹\n\n\t\t\t\t\t\t\tb.è¿”å›ä¸Šçº§èœå•\n");
 	scanf("%c",&choose);
 	getchar();
 	switch(choose)
 	{
-		title("¿Î³Ì¿â");
+		title("è¯¾ç¨‹åº“");
 		case '1':addcourse(p1,p);getchar();break;
 		case '2':deletecourse(p1,p);getchar();break;
 		case '3':revisecourse(p);getchar();break;
 		case '4':viewcourse(p1,p,a,b,c);getchar();break;
 	 	case 'b':
 	 	case 'B':break;
-		default:printf("Ñ¡Ïî²»´æÔÚ£¬°´»Ø³µ¼ü¼ÌĞø...\n");getchar();break;
+		default:printf("é€‰é¡¹ä¸å­˜åœ¨ï¼ŒæŒ‰å›è½¦é”®ç»§ç»­...\n");getchar();break;
 	}
 	}while(choose!='b'&&choose!='B');
 }
-void sequence(struct student *p,struct course *p1,int *a,int *b,int*c)//Ä¬ÈÏÉıĞòÅÅÁĞ,·ÖÊı°´½µĞòÅÅÁĞ£¬Ä¬ÈÏ´òÓ¡Ñ§ºÅ£¬ĞÕÃû£¬¸÷¿Æ·ÖÊı£¬×Ü·Ö£¬Ä¬ÈÏµÚ¶ş¹Ø¼ü´ÊÎªÑ§ºÅ 
+void sequence(struct student *p,struct course *p1,int *a,int *b,int*c)//é»˜è®¤å‡åºæ’åˆ—,åˆ†æ•°æŒ‰é™åºæ’åˆ—ï¼Œé»˜è®¤æ‰“å°å­¦å·ï¼Œå§“åï¼Œå„ç§‘åˆ†æ•°ï¼Œæ€»åˆ†ï¼Œé»˜è®¤ç¬¬äºŒå…³é”®è¯ä¸ºå­¦å· 
 {	
 	if(*a==0||*b==0)
 	{
-		title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p,a,c);(*a)++;}
 		if(*b==0){inputcourse(p,p1,b,c);(*b)++;}
 		if(*c==0){inputscore(p,p1,a,b,c);(*c)++;}
 	}
-	title("ÅÅĞò");
+	title("æ’åº");
 	char choose;
 	do{
-	title("ÅÅĞò");
-	printf("\t\t\t\t\t\t\t1.°´×Ü·ÖÅÅĞò\n\n");
-	printf("\t\t\t\t\t\t\t2.°´Ñ§ºÅÅÅĞò\n\n");
-	printf("\t\t\t\t\t\t\t3.µÚÒ»×Ö¶ÎÎªÄê¼¶£¬µÚ¶ş×Ö¶ÎÎª¿Î³ÌÅÅĞò\n\n");
-	printf("\t\t\t\t\t\t\t4.µÚÒ»×Ö¶ÎÎª×¨Òµ£¬µÚ¶ş×Ö¶ÎÎª¿Î³ÌÅÅĞò\n\n");
-	printf("\t\t\t\t\t\t\t5.µÚÒ»×Ö¶ÎÎªÑ§Ôº£¬µÚ¶ş×Ö¶ÎÎª¿Î³ÌÅÅĞò\n\n");
-	printf("\t\t\t\t\t\t\t6.µÚÒ»×Ö¶ÎÎª¿Î³Ì£¬µÚ¶ş×Ö¶ÎÎªÑ§ºÅÅÅĞò\n\n");
-	printf("\t\t\t\t\t\t\tb.·µ»ØÉÏÒ»¼¶²Ëµ¥\n");
+	title("æ’åº");
+	printf("\t\t\t\t\t\t\t1.æŒ‰æ€»åˆ†æ’åº\n\n");
+	printf("\t\t\t\t\t\t\t2.æŒ‰å­¦å·æ’åº\n\n");
+	printf("\t\t\t\t\t\t\t3.ç¬¬ä¸€å­—æ®µä¸ºå¹´çº§ï¼Œç¬¬äºŒå­—æ®µä¸ºè¯¾ç¨‹æ’åº\n\n");
+	printf("\t\t\t\t\t\t\t4.ç¬¬ä¸€å­—æ®µä¸ºä¸“ä¸šï¼Œç¬¬äºŒå­—æ®µä¸ºè¯¾ç¨‹æ’åº\n\n");
+	printf("\t\t\t\t\t\t\t5.ç¬¬ä¸€å­—æ®µä¸ºå­¦é™¢ï¼Œç¬¬äºŒå­—æ®µä¸ºè¯¾ç¨‹æ’åº\n\n");
+	printf("\t\t\t\t\t\t\t6.ç¬¬ä¸€å­—æ®µä¸ºè¯¾ç¨‹ï¼Œç¬¬äºŒå­—æ®µä¸ºå­¦å·æ’åº\n\n");
+	printf("\t\t\t\t\t\t\tb.è¿”å›ä¸Šä¸€çº§èœå•\n");
  	scanf("%c",&choose);
  	getchar();
  	switch(choose)
@@ -1049,7 +1050,7 @@ void sequence(struct student *p,struct course *p1,int *a,int *b,int*c)//Ä¬ÈÏÉıĞò
 	 	case '6':subjectsequence(p,p1);getchar();break;
 	 	case 'b':
 	 	case 'B':break;
-		default:printf("Ñ¡Ïî²»´æÔÚ£¬°´»Ø³µ¼ü¼ÌĞø...\n");getchar();break;
+		default:printf("é€‰é¡¹ä¸å­˜åœ¨ï¼ŒæŒ‰å›è½¦é”®ç»§ç»­...\n");getchar();break;
 	 	}
  	}while(choose!='b'&&choose!='B');
 }
@@ -1057,8 +1058,8 @@ void statcourse(struct student *p,struct course *p1,int *a,int *b,int*c)
 {
 	if(*a==0||*b==0)
 	{
-		title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p,a,c);(*a)++;}
 		if(*b==0){inputcourse(p,p1,b,c);(*b)++;}
@@ -1068,7 +1069,7 @@ void statcourse(struct student *p,struct course *p1,int *a,int *b,int*c)
 	int n1=0,n2=0,n3=0,n4=0,n5=0;
 	double std;
 	printf("\n\n\n");
-	printf("¿Î³ÌºÅ  ¿Î³ÌÃû  Ñ§·Ö\t90~100\t80~90\t70~80\t60~70\t0~60\tÆ½¾ù·Ö\t·½²î\t±ê×¼²î\t×î¸ß·Ö\t×îµÍ·Ö\n");
+	printf("è¯¾ç¨‹å·  è¯¾ç¨‹å  å­¦åˆ†\t90~100\t80~90\t70~80\t60~70\t0~60\tå¹³å‡åˆ†\tæ–¹å·®\tæ ‡å‡†å·®\tæœ€é«˜åˆ†\tæœ€ä½åˆ†\n");
 	for(j=1;j<=realcourse;j++,p1++)
 	{
 		aver=0.0;sum=0.0;n1=0;n2=0;n3=0;n4=0;n5=0;max=p[0].score[j-1];min=p[0].score[j-1];
@@ -1097,18 +1098,18 @@ void statistics(struct student *p,struct course *p1,int *a,int *b,int*c)
 {
 	if(*a==0||*b==0)
 	{
-		title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p,a,c);(*a)++;}
 		if(*b==0){inputcourse(p,p1,b,c);(*b)++;}
 	}
-	title("Í³¼Æ");
+	title("ç»Ÿè®¡");
 	int i,j,k,credit;
 	float aver,variance,sum;
 	double std;
 	printf("\n\n");
-	printf("Ñ§ºÅ\t\tĞÕÃû\t×Ü·Ö\tÆ½¾ù·Ö\t×ÜÑ§·Ö\t\n");
+	printf("å­¦å·\t\tå§“å\tæ€»åˆ†\tå¹³å‡åˆ†\tæ€»å­¦åˆ†\t\n");
 	for(i=1;i<=realnumber;i++,p++)
 	{
 		credit=0;
@@ -1121,28 +1122,28 @@ void statistics(struct student *p,struct course *p1,int *a,int *b,int*c)
 	}
 	p=p-realnumber;
 	statcourse(p,p1,a,b,c);
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
 void lookup(struct student *p,struct course *p1,int *a,int *b,int*c)
 {
 	if(*a==0||*b==0)
 	{
-		title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p,a,c);(*a)++;}
 		if(*b==0){inputcourse(p,p1,b,c);(*b)++;}
 	}
-	title("²éÑ¯ĞÅÏ¢");
+	title("æŸ¥è¯¢ä¿¡æ¯");
 	char choose;
 	do{
-	title("²éÑ¯ĞÅÏ¢");	
-	printf("\t\t\t\t\t\t\t1.°´Ñ§ºÅ²éÑ¯\n\n");
-	printf("\t\t\t\t\t\t\t2.°´ĞÕÃû²éÑ¯\n\n");
-	printf("\t\t\t\t\t\t\t3.°´Äê¼¶²éÑ¯\n\n");
-	printf("\t\t\t\t\t\t\t4.°´×¨Òµ²éÑ¯\n\n");
-	printf("\t\t\t\t\t\t\t5.°´Ñ§ÔºÅÅĞò\n\n");
-	printf("\t\t\t\t\t\t\tb.·µ»ØÉÏÒ»¼¶²Ëµ¥\n");
+	title("æŸ¥è¯¢ä¿¡æ¯");	
+	printf("\t\t\t\t\t\t\t1.æŒ‰å­¦å·æŸ¥è¯¢\n\n");
+	printf("\t\t\t\t\t\t\t2.æŒ‰å§“åæŸ¥è¯¢\n\n");
+	printf("\t\t\t\t\t\t\t3.æŒ‰å¹´çº§æŸ¥è¯¢\n\n");
+	printf("\t\t\t\t\t\t\t4.æŒ‰ä¸“ä¸šæŸ¥è¯¢\n\n");
+	printf("\t\t\t\t\t\t\t5.æŒ‰å­¦é™¢æ’åº\n\n");
+	printf("\t\t\t\t\t\t\tb.è¿”å›ä¸Šä¸€çº§èœå•\n");
  	scanf("%c",&choose);
  	getchar();
  	switch(choose)
@@ -1154,7 +1155,7 @@ void lookup(struct student *p,struct course *p1,int *a,int *b,int*c)
 	 	case '5':collegelookup(p,p1);getchar();break;
 	 	case 'b':
 	 	case 'B':break;
-		default:printf("Ñ¡Ïî²»´æÔÚ£¬°´»Ø³µ¼ü¼ÌĞø...\n");getchar();break;
+		default:printf("é€‰é¡¹ä¸å­˜åœ¨ï¼ŒæŒ‰å›è½¦é”®ç»§ç»­...\n");getchar();break;
 	 	}
  	}while(choose!='b'&&choose!='B');
 }
@@ -1162,18 +1163,18 @@ void printall(struct student *p,struct course *p1,int *a,int *b,int*c)
 {
 	if(*a==0||*b==0)
 	{
-		title("Ñ§Éú³É¼¨¹ÜÀíÏµÍ³1.0\n\n\n");
-		printf("ÇëÏÈÊäÈëÑ§ÉúĞÅÏ¢ºÍ¿Î³ÌĞÅÏ¢\n°´»Ø³µÈ·ÈÏ\n");
+		title("å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ1.0\n\n\n");
+		printf("è¯·å…ˆè¾“å…¥å­¦ç”Ÿä¿¡æ¯å’Œè¯¾ç¨‹ä¿¡æ¯\næŒ‰å›è½¦ç¡®è®¤\n");
 		getchar();
 		if(*a==0){inputmember(p,a,c);(*a)++;}
 		if(*b==0){inputcourse(p,p1,b,c);(*b)++;}
 	}
 	int i,j;
-	title("´òÓ¡ËùÓĞĞÅÏ¢");
-	printf("ĞòºÅ\tÑ§ºÅ\t\tĞÕÃû\tĞÔ±ğ\t");
+	title("æ‰“å°æ‰€æœ‰ä¿¡æ¯");
+	printf("åºå·\tå­¦å·\t\tå§“å\tæ€§åˆ«\t");
 	for(i=1;i<=realcourse;i++)
 	printf("%-8s",p1[i-1].name);
-	printf("×Ü·Ö\tÆ½¾ù·Ö\t»ñµÃÑ§·Ö  Äê¼¶\t  Ñ§Ôº\t  ×¨Òµ\t\n");
+	printf("æ€»åˆ†\tå¹³å‡åˆ†\tè·å¾—å­¦åˆ†  å¹´çº§\t  å­¦é™¢\t  ä¸“ä¸š\t\n");
 	for(i=1;i<=realnumber;i++)
 	{
 		printf("%-8d%-16s%-8s%-8s%",i,p[i-1].num,p[i-1].name,p[i-1].sex);
@@ -1184,5 +1185,5 @@ void printall(struct student *p,struct course *p1,int *a,int *b,int*c)
 		printf("%-8.2f%-8.2f%-10d%-8s%-8s%-8s\n",p[i-1].total,p[i-1].aver,creditcal(p[i-1],p1),p[i-1].grade,p[i-1].college,p[i-1].major);
 	}
 	statcourse(p,p1,a,b,c);
-	printf("\n\n\n°´»Ø³µ¼ü·µ»Ø");
+	printf("\n\n\næŒ‰å›è½¦é”®è¿”å›");
 }
