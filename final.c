@@ -60,7 +60,7 @@ void main()
  		printf("\t\t\t\t\t\t\t7.课程库\n\n");
   		printf("\t\t\t\t\t\t\t8.排序\n\n");
    		printf("\t\t\t\t\t\t\t9.统计\n\n");
-	    printf("\t\t\t\t\t\t\ta.查询\n\n"); 
+	    	printf("\t\t\t\t\t\t\ta.查询\n\n"); 
 		printf("\t\t\t\t\t\t\tp.打印所有信息\n\n");
 		printf("\t\t\t\t\t\t\tb.退出\n\n");
 		printf("\n\n\n");
