@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download or Run final.exe</title>
+</head>
+<body>
+    <h1>Download or Run final.exe</h1>
+    <p>Click the button below to download or run final.exe:</p>
+    
+    <!-- Download link -->
+    <a href="final.exe" download>
+        <button>Download final.exe</button>
+    </a>
+    
+    <br><br>
+    
+    <!-- Execute link (for Windows) -->
+    <a href="javascript:runFinal()">
+        <button>Run final.exe</button>
+    </a>
+
+    <!-- JavaScript function to execute final.exe (Windows only) -->
+    <script>
+        function runFinal() {
+            window.location.href = 'final.exe';
+        }
+    </script>
+</body>
+</html>
